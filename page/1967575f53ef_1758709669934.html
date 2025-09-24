@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【維護】beanfun! App 改版維護說明 - 活動</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .header-bar {
+            background-color: #ffffff;
+            padding: 10px 20px;
+            border-bottom: 2px solid #000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .header-main {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        .header-info {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85em;
+            color: #666;
+        }
+        .header-info .datetime-group {
+            white-space: nowrap;
+            margin-right: 15px;
+        }
+        .header-info .source-url {
+            word-break: break-all;
+            flex-grow: 1;
+            text-align: right;
+        }
+        .header-info .source-url a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .header-info .source-url a:hover {
+            text-decoration: underline;
+        }
+        h1 {
+            flex-grow: 1;
+            text-align: center;
+            margin: 0;
+            font-size: 1.8em;
+            color: #2c3e50;
+        }
+        .back-button {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        .back-button:hover {
+            text-decoration: underline;
+        }
+        /* 針對活動頁面，內容區塊保持全寬 */
+        .announcement-content {
+            padding: 20px;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+        .announcement-content img, .announcement-content video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 15px auto;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* ------------------------------------- */
+        /* 手機版樣式最佳化 (當螢幕寬度小於 600px) */
+        /* ------------------------------------- */
+        @media (max-width: 600px) {
+            .header-bar {
+                padding: 10px;
+            }
+            .header-main, .header-info {
+                flex-direction: column;
+                align-items: flex-start;
+                margin-bottom: 10px;
+            }
+            .header-info {
+                font-size: 0.9em;
+            }
+            .header-info .datetime-group {
+                margin-bottom: 5px;
+                margin-right: 0;
+            }
+            .header-info .source-url {
+                text-align: left;
+            }
+            h1 {
+                text-align: left;
+                font-size: 1.5em;
+                margin-top: 10px;
+                order: 2;
+            }
+            .back-button {
+                order: 1;
+                font-size: 1.5em;
+            }
+            .header-main div[style*="width: 80px"] {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-bar">
+        <div class="header-main">
+            <a href="../index.html" class="back-button">返回列表</a>
+            <h1>【維護】beanfun! App 改版維護說明</h1>
+            <div style="width: 80px;"></div>
+        </div>
+        <div class="header-info">
+            <div class="datetime-group">
+                <span>發布日期: 2025/09/23</span>
+                <span style="margin-left: 15px;">爬蟲時間: 2025/09/24 10:27:49</span>
+            </div>
+            <div class="source-url">
+                <a href="https://tw.beanfun.com/news/content.aspx?p=1&amp;news_id=6005&amp;c=1&amp;t=2870&amp;tc=Announcement" target="_blank">https://tw.beanfun.com/news/content.aspx?p=1&amp;news_id=6005&amp;c=1&amp;t=2870&amp;tc=Announcement</a>
+            </div>
+        </div>
+    </div>
+    <div class="announcement-content">
+        <html><head>
+
+</head><body><div id="BF_divHeader" style="width:968px;"><div class="BF_BoxBD">  <div class="BF_BoxContent">    <div class="BF_BoxContentNarrowPadding">      <ul class="BF_HeaderWrapper">        <li class="BF_Logo">          <a href="#" onclick="BeanFunBlock.GotoHomePage();return false;" title="beanfun! HOME"><img src="https://tw.hicdn.beanfun.com/INTRA/images/header/oneBrand-bilingual-logo-b.png" height="34" border="0"></a>        </li>        <li class="BF_Navbar">          <div id="BF_MainMenuBar"><ul class="BF_MainMenu"><li class="BF_Drop"><a id="BFNavi_Home" href="#"><span>遊戲</span></a><div class="BF_Drop_menu"><ul><li><a id="BFNavi_OnlineGame" href="https://tw.beanfun.com/game_zone/" target="_top">線上遊戲</a></li></ul></div></li></ul></div>          <div id="BF_SubMenuBar"><ul id="BF_TopMenu" class="BF_SubMenu"><li id="BF_liAreaList"><a class="BF_Drop" href="#" onclick="return false;">TW</a><ul id="BF_ulOtherAreaSelection" style="visibility: visible;"><li><a href="https://tw.beanfun.com/" target="_top">Taiwan</a></li> </ul></li></ul></div>        </li>      </ul>    </div>  </div></div><div class="BF_BoxFT"><div class="BF_BoxContent"></div></div></div>
+    <!--Start search bar-->
+    
+    <div id="searchform" style="width:960px;background:transparenet;margin: 0 auto;">
+        <table>
+            <tbody><tr>
+                <td width="105px">
+                    <div id="SetHomePage" style="display:none;">
+                        <a href="javascript:void(0)" onclick="setHomepage()">
+                        <img src="images/homepageimage.png" alt="將本站設為首頁"></a>
+                    </div>
+                </td>
+             
+                </tr>
+        </tbody></table>
+     </div>
+    
+    <!--End search bar-->
+    <div class="PageMargins">
+
+        <div id="divMainHeader"></div>
+
+
+
+        <div>
+            
+        
+        <div id="divMain">
+            <div class="BoxContainer">
+                <div class="BoxHD">
+                    <div class="BoxContent">
+                    </div>
+                </div>
+                <div class="BoxBD">
+                    <div class="BoxContent">
+                        <div class="BoxContentNarrowPadding">
+                            <div class="ContentTitle">
+                                <h1></h1>
+                            </div>
+                            <div class="ContentDetail">
+                                <img class="TitleImg" src="https://tw.hicdn.beanfun.com/images/default/common/link_active.png">
+                                <h2 style="width:97%;"></h2>
+                                <div class="DateArea"></div>
+                                <div class="NewsPageContent"></div>
+                            </div>
+                            <!-- start google ad -->
+                            <div id="google" style="padding-left:100px;padding-bottom:20px;">
+                                
+                                <ins class="adsbygoogle adsbygoogle-noablate" data-ad-client="ca-pub-5004984851047986" data-ad-height="90" data-ad-slot="5037895176" data-ad-width="728" data-adsbygoogle-status="done" style="display: inline-block; width: 728px; height: 90px;"><div id="aswift_0_host" style="border: none; height: 90px; width: 728px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"></div></ins>
+                            </div>
+                            <!-- end google ad -->
+                            <!-- Begin: Pagination -->
+                            <div id="divPagePagination" class="Clearfix">
+                                <div class="Num_results"></div>
+                                <ul class="Pagination">
+                                </ul>
+                            </div>
+                            <!-- End: Pagination -->
+                        </div>
+                    </div>
+                </div>
+                <div class="BoxFT">
+                    <div class="BoxContent">
+                    </div>
+                </div>
+            </div>
+        </div>
+<!-- 嚙緙嚙緬嚙諄計 -->
+<!-- ga -->
+
+    
+
+<!-- comScore --->
+
+
+        </div>
+
+        <div id="divMainFooter"></div>
+        <br>
+        <!-- begin: #footer -->
+        <table width="960" border="0" cellspacing="0" cellpadding="0" align="center">
+          <tbody><tr style="line-height: 27px;">
+            <td><span style="color: #FF8300; font-size: 24px; font-weight: bold; font-family: 微軟正黑體;">適度遊戲．健康滿分</span></td>
+            <td height="30" align="right" valign="top">
+                <a href="https://tw.hicdn.beanfun.com/beanfun/beanfunApp/new_beanfun_faq_v2/index.html" target="_blank" onclick="RecLink('beanfun-index','地-常見問題', 'link',1);" rel="noreferrer noopener"> <b>常見問題</b></a>&nbsp;&nbsp;
+                <a href="https://tw.beanfun.com/sitemap.html" target="_blank" rel="noreferrer noopener"><b>網站地圖</b></a>&nbsp;&nbsp;
+            </td>
+          </tr>
+        </tbody></table>
+        <div id="divFooter" style="margin-bottom:70px;">
+            <p class="Copyright">
+                © 1995 - 2025 gamania Digital Entertainment Co., Ltd.
+                <a href="https://tw.beanfun.com/locales/TW/contents/privacy_policy.aspx" id="ctl00_aPrivacyPolicy">隱私權政策 (Privacy Policy)</a> ·
+			    <a href="https://tw.beanfun.com/locales/TW/contents/terms_of_service.aspx" id="ctl00_aTermsOfService">服務條款 (Service Agreement)</a>
+            </p>
+            <p class="Navigation">
+                <a href="http://www.gamania.com/" target="_blank" rel="noreferrer noopener">
+                <!--[if gte IE 7]><!-->
+                    <img src="https://tw.beanfun.com/images/default/common/gamania.png" alt="">
+                <!--<![endif]-->
+                <!--[if lte IE 6]>
+                    <img src="/images/default_ie6/common/gamania.gif" />
+                <![endif]-->
+                </a>
+            </p>
+        </div>
+        <!-- end: #footer -->
+    </div>
+    
+
+    <!-- 20130411 蓋台使用 --
+    --   調整iframe高度，利用抓取ActionBar的高度來做判斷 by ChesterChung
+    -->
+    
+
+
+
+
+<div id="BF_divActionBar" style="display: block; width: 1270px; visibility: visible; left: 5px;"><div class="BF_LeftSide"></div><div class="BF_Logo" title="CH.137" onclick="BeanFunBlock.WebTrendCounter('DCSext.bf_actionbar','index');BeanFunBlock.GotoHomePage();"></div><div class="BF_ActionArea">  <div id="BF_ActionBarInner" class="BF_ActionArea-inner" style="width: 1190px;">    <div id="BF_divLeftButtons" class="BF_Actionbar-button BF_LogoutStatus" style="float:left">      <ul>        <li id="BF_btnQuickStart"><img height="24" width="24" src="https://tw.hicdn.beanfun.com/INTRA/images/actionbar/icons/icons/gamezone_u.png" align="absmiddle" style="display:none">快速啟動</li>        <li id="BF_btnMyLinks" style="display: none;"><img height="24" width="24" src="https://tw.hicdn.beanfun.com/INTRA/images/actionbar/icons/icons/links_u.png" align="absmiddle">我的最愛</li>      </ul>    </div>    <div id="BF_divLoginBtn" style="display: block; visibility: visible;"><a id="BF_anchorLoginBtn" href="#">登入</a></div>    <div id="BF_divRightButtons" class="BF_Actionbar-button BF_LogoutStatus" style="float:right">      <ul>        <li id="BF_btnBag" style="display: none;"><img height="24" width="24" src="https://tw.hicdn.beanfun.com/images/actionbar/icons/backpack.png" align="absmiddle">雲端背包</li>        <li id="BF_btnMember"><img height="24" width="24" src="https://tw.hicdn.beanfun.com/INTRA/images/actionbar/icons/member_u.png" align="absmiddle">會員中心</li>        <li id="BF_btnGash"><img height="24" width="24" src="https://tw.hicdn.beanfun.com/INTRA/images/actionbar/icons/gash_u.png" align="absmiddle"><span id="BF_btnGashInnerText">我的錢包</span></li>        <li id="BF_btnMessage" style="display:none;"><div class="MsgCount" id="BF_MessageCount" style="visibility:hidden">0</div><img height="24" width="24" src="https://tw.hicdn.beanfun.com/INTRA/images/actionbar/icons/icons/message_u.png" align="absmiddle">訊息</li>        <li id="BF_btnProfile" style="display:none;"><div class="MsgCount" id="BF_NewsCount" style="visibility:hidden">0</div><img height="30" width="30" src="https://tw.hicdn.beanfun.com/INTRA/images/actionbar/icons/common/profile.png" align="absmiddle" id="BF_imgHeadPic"><span id="BF_NicknameText">no name</span></li>        <li id="BF_btnSignup" style="display: block; visibility: visible;" class="Signup"><img height="24" width="24" src="https://tw.hicdn.beanfun.com/INTRA/images/actionbar/icons/icons/add.png" align="absmiddle">申請帳號</li>        <li id="BF_btnLogout" style="display:none;">登出</li>      </ul>    </div>    <div class="BF_Seperater">&nbsp;</div>  </div></div><div class="BF_RightSide"></div></div><div id="BF_divPopWindow" style="display: none;"><div class="BF_Header">  <div id="BF_divPopWinCaption" class="BF_Caption"></div>  <div class="BF_CloseButton"><a class="popclose" onclick="BeanFunBlock.HidePopWindow(); return false;" href="#">&nbsp;</a></div></div><div class="BF_Content">  <ul id="BF_BaseList"></ul>  <div id="BF_divPopWinMoreInfo" class="BF_MoreInfo"></div></div><div class="BF_Footer"></div></div><div id="BF_divGashSubMenu" style="display: none;"><ul><li onclick="BeanFunBlock.GotoChannel('bfb_Gash');">儲值與購點</li><li onclick="BeanFunBlock.GetRemainPoint()">更新點數</li></ul></div><div id="BF_divMsgBox" style="display: none;"><div id="BF_divMsgBoxInner">  <div class="BF_MsgBoxHeader"><div class="BF_MsgBoxTitle">beanfun! Message</div><div class="BF_MsgBoxCloseBtn" onclick="BeanFunBlock.HideMsgBox();">&nbsp;</div></div>  <div id="BF_divMsgBoxContent"></div>  <div class="BF_MsgBoxFooter"> </div></div></div><ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none !important;"><div id="aswift_1_host" style="border: none; height: 0px; width: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"></div></ins></body></html>
+    </div>
+</body>
+</html>
